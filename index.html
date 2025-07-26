@@ -21,32 +21,30 @@
         header {
             background-color: #333; /* Темний сірий фон */
             color: #ffeb3b; /* Яскраво-жовтий колір тексту (як у попередній версії) */
-            padding: 1em 0;
-            text-align: center;
+            padding: 1em 20px; /* Додано відступи з боків */
+            text-align: left; /* Вирівнювання тексту ліворуч */
             box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Тінь для об'ємності */
             position: relative; /* Для позиціонування логотипу */
-            min-height: 100px; /* Мінімальна висота шапки */
+            min-height: 80px; /* Зменшена мінімальна висота шапки */
+            display: flex; /* Використовуємо flexbox для вирівнювання елементів */
+            align-items: center; /* Вирівнюємо елементи по центру по вертикалі */
         }
 
         /* Стилі для зображення логотипу в шапці */
         header img {
-            position: absolute;
-            top: 50%; /* Центруємо по вертикалі */
-            left: 20px; /* Відступ зліва */
-            transform: translateY(-50%); /* Точне центрування */
             width: auto;
-            height: 80px; /* Фіксована висота */
+            height: 60px; /* Зменшена висота логотипу */
             border-radius: 50%; /* Кругле зображення */
             border: 2px solid #ffeb3b; /* Обведення кольором акценту */
+            margin-right: 20px; /* Відступ між логотипом та текстом */
         }
 
         /* Стилі для заголовка шапки */
         header h1 {
             margin: 0;
             font-family: 'Creepster', cursive; /* "Моторошний" шрифт */
-            font-size: 2.5em; /* Розмір шрифту */
+            font-size: 2em; /* Трохи зменшений розмір шрифту */
             text-shadow: 2px 2px #000; /* Тінь для тексту */
-            padding-left: 120px; /* Відступ, щоб не перекривати логотип */
         }
 
         /* Стилі для навігаційного меню */
@@ -237,13 +235,21 @@
 
         /* Адаптивність для менших екранів */
         @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Елементи шапки в колонку на мобільних */
+                text-align: center;
+                padding: 1em 10px;
+                min-height: unset;
+            }
             header img {
-                height: 60px;
-                left: 10px;
+                margin-right: 0;
+                margin-bottom: 10px;
+                position: static;
+                transform: none;
             }
             header h1 {
                 font-size: 1.8em;
-                padding-left: 90px;
+                padding-left: 0;
             }
             nav a {
                 padding: 10px 15px;
@@ -373,7 +379,7 @@
             setTimeout(() => {
                 zoroDiv.classList.add('hidden'); // Приховуємо div після анімації
                 zoroDiv.style.display = 'none'; // Вимикаємо відображення
-            }, 500); // Час анімації 0.5s
+            }, 500); // Час анімації 0.5s (відповідає тривалості анімації в CSS)
         }
     </script>
 </body>
