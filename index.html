@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топ 10 Найпотужніших Тварюк з каналу Doctor Nowhere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        /* Базові стилі для всього тіла сторінки */
+        body {
+            font-family: 'Roboto', sans-serif; /* Основний шрифт */
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Дуже темний фон */
+            color: #f4f4f4; /* Світлий колір тексту */
+            line-height: 1.6; /* Міжрядковий інтервал */
+            overflow-x: hidden; /* Запобігаємо горизонтальному прокручуванню */
+        }
+
+        /* Стилі для шапки */
+        header {
+            background-color: #333; /* Темний сірий фон */
+            color: #ffeb3b; /* Яскраво-жовтий колір тексту (як у попередній версії) */
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Тінь для об'ємності */
+            position: relative; /* Для позиціонування логотипу */
+            min-height: 100px; /* Мінімальна висота шапки */
+        }
+
+        /* Стилі для зображення логотипу в шапці */
+        header img {
+            position: absolute;
+            top: 50%; /* Центруємо по вертикалі */
+            left: 20px; /* Відступ зліва */
+            transform: translateY(-50%); /* Точне центрування */
+            width: auto;
+            height: 80px; /* Фіксована висота */
+            border-radius: 50%; /* Кругле зображення */
+            border: 2px solid #ffeb3b; /* Обведення кольором акценту */
+        }
+
+        /* Стилі для заголовка шапки */
+        header h1 {
+            margin: 0;
+            font-family: 'Creepster', cursive; /* "Моторошний" шрифт */
+            font-size: 2.5em; /* Розмір шрифту */
+            text-shadow: 2px 2px #000; /* Тінь для тексту */
+            padding-left: 120px; /* Відступ, щоб не перекривати логотип */
+        }
+
+        /* Стилі для навігаційного меню */
+        nav {
+            background-color: #222; /* Ще темніший фон */
+            overflow: hidden; /* Приховуємо все, що виходить за межі */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Тінь */
+            text-align: center; /* Центруємо посилання */
+            padding: 5px 0;
+        }
+
+        nav a {
+            display: inline-block; /* Робимо блоками, але в один рядок */
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Плавний перехід кольорів */
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #555; /* Зміна фону при наведенні */
+            color: #ffeb3b; /* Зміна кольору тексту */
+        }
+
+        /* Контейнер для основного контенту */
+        .container {
+            max-width: 960px; /* Максимальна ширина */
+            margin: 20px auto; /* Центрування по горизонталі */
+            padding: 20px;
+            background-color: #1e1e1e; /* Темніший фон для контенту */
+            border-radius: 8px; /* Заокруглені кути */
+            box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Тінь */
+        }
+
+        /* Заголовок секції топу */
+        .container h1 {
+            font-family: 'Creepster', cursive;
+            color: #ffeb3b;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        /* Стилі для кожного елемента тварюки в топі */
+        .monster-item {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #555; /* Тонка рамка */
+            border-radius: 6px;
+            background-color: #2a2a2a; /* Фон елемента */
+            display: flex; /* Використовуємо flexbox для вирівнювання зображення та тексту */
+            align-items: center; /* Вирівнюємо елементи по центру по вертикалі */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Тінь */
+            transition: transform 0.3s ease; /* Плавний перехід для анімації */
+        }
+
+        .monster-item:hover {
+            transform: translateY(-5px); /* Підняття елемента при наведенні */
+        }
+
+        /* Стилі для зображень тварюк */
+        .monster-item img {
+            width: 150px; /* Фіксована ширина */
+            height: 150px; /* Фіксована висота */
+            object-fit: cover; /* Зображення заповнює простір, обрізаючи зайве */
+            border-radius: 8px; /* Заокруглені кути */
+            margin-right: 20px; /* Відступ справа від зображення */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Тінь */
+            transition: transform 0.3s ease-in-out; /* Плавний перехід для анімації */
+            border: 2px solid #ffeb3b; /* Обведення */
+        }
+
+        .monster-item img:hover {
+            transform: scale(1.05) rotate(2deg); /* Збільшення та легкий поворот при наведенні */
+        }
+
+        /* Контейнер для інформації про тварюку */
+        .monster-info {
+            flex-grow: 1; /* Дозволяє займати доступний простір */
+        }
+
+        /* Стилі для заголовків місця в топі */
+        .monster-info h2 {
+            color: #ffeb3b; /* Колір акценту */
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: 'Creepster', cursive;
+            font-size: 1.8em;
+        }
+
+        /* Стилі для назви тварюки */
+        .monster-info h3 {
+            color: #ccc;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        /* Стилі для кнопок */
+        .button {
+            display: inline-block;
+            background-color: #a00; /* Червоний колір */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #d00;
+            transform: translateY(-2px);
+        }
+
+        /* Стилі для секції "Зоро" */
+        .zoro-section {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .zoro-section h2 {
+            color: #ffeb3b;
+            font-family: 'Creepster', cursive;
+            font-size: 2em;
+        }
+
+        /* Анімація атаки Зоро */
+        .zoro-attack {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-20deg); /* Початкове положення */
+            z-index: 9999; /* Поверх усіх елементів */
+            pointer-events: none; /* Щоб не блокувати кліки */
+            animation: zoroSlash 0.5s ease-out forwards; /* Анімація */
+            opacity: 0; /* Прихований на початку */
+            display: none; /* Прихований за замовчуванням */
+        }
+
+        .zoro-attack img {
+            max-width: 500px;
+            height: auto;
+        }
+
+        @keyframes zoroSlash {
+            0% {
+                transform: translate(-50%, -50%) rotate(10deg) scale(0.8);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(-30deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Клас для приховування елементів */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Стилі для підвалу */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 50px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5); /* Тінь зверху */
+            border-top: 3px solid #ffeb3b; /* Лінія акценту */
+        }
+
+        footer h3 {
+            margin-bottom: 5px;
+            font-family: 'Creepster', cursive;
+            color: #ffeb3b;
+        }
+
+        /* Адаптивність для менших екранів */
+        @media (max-width: 768px) {
+            header img {
+                height: 60px;
+                left: 10px;
+            }
+            header h1 {
+                font-size: 1.8em;
+                padding-left: 90px;
+            }
+            nav a {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            .monster-item {
+                flex-direction: column; /* На маленьких екранах елементи в колонку */
+                text-align: center;
+            }
+            .monster-item img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .monster-info h2 {
+                font-size: 1.5em;
+            }
+            .monster-info h3 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://yt3.googleusercontent.com/N5kaA4b-Kx9o8HSxB7sRe07_5mY6PjucPWXQ_YIZD42afV6-pQ4TnsUW0pES9Qw1qfcdWZIFEg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="Doctor Nowhere Logo">
+        <h1>Топ 10 Найпотужніших Тварюк з каналу Doctor Nowhere</h1>
+    </header>
+
+    <nav>
+        <a href="#top-section">Початок Топу</a>
+        <a href="#zoro-section">Про Зоро</a>
+        <a href="#footer-section">Скебоб Каже</a>
+    </nav>
+
+    <div class="container">
+        <section id="top-section">
+            <h1 style="text-align: center;">Топ найстрашніших істот від Doctor Nowhere!</h1>
+
+            <div class="monster-item">
+                <img src="https://i.pinimg.com/736x/2e/e5/3e/2ee53e5e8f51845b6c382c84794e004a.jpg" alt="Чубака з телевізору">
+                <div class="monster-info">
+                    <h2>10 місце</h2>
+                    <h3>Чубака з телевізора</h3>
+                    <p>Він на 10-му місці, бо може зламати екран телевізора та вийти з нього! Але якщо сісти і перевернути його зображення, цей "ботік" нічого не зробить. Ще у нього замість рук можуть бути шапури.</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://i.pinimg.com/736x/f3/e3/c4/f3e3c49076a7c4480af3ac6d96cb4664.jpg" alt="Варені Пелемень">
+                <div class="monster-info">
+                    <h2>9 місце</h2>
+                    <h3>Варений Пельмень</h3>
+                    <p>Якось, у якомусь році, на якомусь каналі з'явився цей варений пельмень і сказав: "Коли ти будеш спати, я прийду до тебе і буду біт-боксити, а ти лох нічого не зробиш, ахахах!" Після цього всі, хто під час його появи дивились той канал, не могли рухатись або говорити. А коли вони лягали спати, цей ещкерімбус з'являється і каже: "lin gan guli guli vaca lin gangu lingangu".</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://i.pinimg.com/736x/65/3c/bb/653cbbd19a179b47669c15c9e124d767.jpg" alt="Ультра Ядерний Пельмень">
+                <div class="monster-info">
+                    <h2>8 місце</h2>
+                    <h3>Ультра Ядерний Пельмень</h3>
+                    <p>Це просто чіл-гай.</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://learn.logikaschool.com/uploads/student/4619978/687209ee1917d.png" alt="Великий мелкі шкєдебе пупсєк">
+                <div class="monster-info">
+                    <h2>7 місце</h2>
+                    <h3>Великий Мелкий Шкєдебе Пупсєк</h3>
+                    <p>Цей скебоб просто ходить за вами і каже, що це ваша вина.</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://learn.logikaschool.com/uploads/student/4619978/68720e36d1a93.png" alt="Чебупеля">
+                <div class="monster-info">
+                    <h2>6 місце</h2>
+                    <h3>Чебупеля</h3>
+                    <p>Цей скебоб сліпий, але не глухий. Якщо його побачиш, то "біжи, Форест, біжи!" Жартую, просто якщо ви побачили цю тварюку, то рухаючись дуже-ДУЖЕ тихо, відходьте від нього. Якщо він вас спіймає, то відірве вашу голову і закріпить її на своєму місці.</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://learn.logikaschool.com/uploads/student/4619978/687b47028ae87.png" alt="Глист в стовпі">
+                <div class="monster-info">
+                    <h2>5 місце</h2>
+                    <h3>Глист у стовпі</h3>
+                    <p>Він може вибухнути вашу голову, якщо побачить. Все.</p>
+                </div>
+            </div>
+
+            <div class="monster-item">
+                <img src="https://learn.logikaschool.com/uploads/student/4619978/687b48e69e25b.png" alt="Танцюючий шкєдебе">
+                <div class="monster-info">
+                    <h2>4 місце</h2>
+                    <h3>Танцюючий Шкєдебе...</h3>
+                    <p>...</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="zoro-section" class="zoro-section">
+            <h2>Зоро знову загубився, какашка!😡😡😡</h2>
+            <p>Зоро, какашка!😡😡😡 розрубив мій сайт😭😭😭😭.</p>
+            <button class="button" onclick="showZoroAttack()">Викликати Зоро!</button>
+            <div id="zoroAttackAnimation" class="zoro-attack hidden">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFbtH4sGsXsvDV7UFGjQdMzmZKWIIjh2bUNQ&s" alt="Зоро атакує">
+            </div>
+        </section>
+    </div>
+
+    <footer id="footer-section">
+        <h3>Скебоб</h3>
+        <p>"Цей сайт просто жарт, будь ласка, не сприймайте його всерйоз"</p>
+        <h3>Скебоб</h3>
+    </footer>
+
+    <script>
+        function showZoroAttack() {
+            const zoroDiv = document.getElementById('zoroAttackAnimation');
+            zoroDiv.classList.remove('hidden'); // Показуємо div
+            zoroDiv.style.display = 'block'; // Переконуємось, що він видимий
+            setTimeout(() => {
+                zoroDiv.classList.add('hidden'); // Приховуємо div після анімації
+                zoroDiv.style.display = 'none'; // Вимикаємо відображення
+            }, 500); // Час анімації 0.5s
+        }
+    </script>
+</body>
+</html>
